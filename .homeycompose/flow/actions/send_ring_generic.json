@@ -1,0 +1,27 @@
+{
+  "id": "send_ring_generic",
+  "title": {
+    "en": "Ring the bell",
+    "nl": "Laat de bel klinken"
+  },
+  "args": [
+    {
+      "name": "channelId",
+      "type": "number",
+      "placeholder": {
+        "en": "channelId"
+      },
+      "min": 0,
+      "max": 63
+    },
+    {
+      "name": "chime",
+      "type": "number",
+      "placeholder": {
+        "en": "chime"
+      },
+      "min": 0,
+      "max": 7
+    }
+  ]
+}

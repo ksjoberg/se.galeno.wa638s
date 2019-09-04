@@ -1,0 +1,25 @@
+{
+  "id": "receive_signal_generic",
+  "title": {
+    "en": "A doorbell is pressed",
+    "nl": "Een deurbel is ingedrukt"
+  },
+  "tokens": [
+    {
+      "name": "channelId",
+      "type": "number",
+      "title": {
+        "en": "channelId"
+      },
+      "example": 12
+    },
+    {
+      "name": "chime",
+      "type": "number",
+      "title": {
+        "en": "chime"
+      },
+      "example": 6
+    }
+  ]
+}

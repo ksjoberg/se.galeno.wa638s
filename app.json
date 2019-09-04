@@ -1,0 +1,110 @@
+{
+  "id": "se.galeno.wa638s",
+  "version": "1.0.0",
+  "compatibility": ">=1.5.0",
+  "sdk": 2,
+  "name": {
+    "en": "Wireless Doorbell WA-638S"
+  },
+  "description": {
+    "en": "Adds support for the Clas Ohlson 36-4832 Wireless Doorbell 433MHz"
+  },
+  "category": [
+    "security"
+  ],
+  "permissions": [
+    "homey:wireless:433"
+  ],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Kristoffer Sjöberg",
+    "email": "ksjoberg@q1.se"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "receive_signal_generic",
+        "title": {
+          "en": "A doorbell is pressed",
+          "nl": "Een deurbel is ingedrukt"
+        },
+        "tokens": [
+          {
+            "name": "channelId",
+            "type": "number",
+            "title": {
+              "en": "channelId"
+            },
+            "example": 12
+          },
+          {
+            "name": "chime",
+            "type": "number",
+            "title": {
+              "en": "chime"
+            },
+            "example": 6
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "send_ring_generic",
+        "title": {
+          "en": "Ring the bell",
+          "nl": "Laat de bel klinken"
+        },
+        "args": [
+          {
+            "name": "channelId",
+            "type": "number",
+            "placeholder": {
+              "en": "channelId"
+            },
+            "min": 0,
+            "max": 63
+          },
+          {
+            "name": "chime",
+            "type": "number",
+            "placeholder": {
+              "en": "chime"
+            },
+            "min": 0,
+            "max": 7
+          }
+        ]
+      }
+    ]
+  },
+  "signals": {
+    "433": {
+      "WA638SSignal": {
+        "sof": [],
+        "eof": [
+          200,
+          6900
+        ],
+        "words": [
+          [
+            650,
+            250
+          ],
+          [
+            200,
+            706
+          ]
+        ],
+        "interval": 6900,
+        "xsensitivity": 0.7,
+        "repetitions": 4,
+        "minimalLength": 24,
+        "maximalLength": 24
+      }
+    }
+  }
+}
